@@ -1,5 +1,12 @@
 # Evaluate a News Article with NLP
 
+## Demo
+https://epic-jepsen-76787e.netlify.app/
+
+<hr>
+
+## Describtion
+
 I use an API called MeaningCloud API has put a public facing API in front of their NLP system. I use it in this project to determine various attributes of an article or blog post.
 
 You have two options for evaluating a news article on this project:
