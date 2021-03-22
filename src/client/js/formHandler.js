@@ -2,7 +2,9 @@ async function handleSubmit(event) {
     event.preventDefault();
 
     const url = Client.globalVariables.urlInput.value;
-    const txt = Client.globalVariables.articleTextInput.value;
+    const txt = Client.globalVariables.articleTextInput.value
+        .split("#")
+        .join("");
 
     let loader = `
         <div class="loader">
