@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NLP Evaluate news articles</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo">Evaluate a news article with NLP</div>
+                    <ul>
+                        <li>
+                            <a
+                                class="url-link active"
+                                data-desc="Url"
+                                href="#"
+                                onclick="return Client.handleNav(event)"
+                                >Article URL</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="article-link"
+                                data-desc="Text"
+                                href="#"
+                                onclick="return Client.handleNav(event)"
+                                >Article Text</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <h2>NLP Evaluate a news article</h2>
+            <p>
+                Enter The <span id="desc">URL</span> To to Evaluate the article.
+            </p>
+            <div class="container">
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <div class="input-box">
+                        <input
+                            id="url"
+                            class="url active"
+                            type="url"
+                            placeholder="URL"
+                            oninput="return Client.showClearBtn(event)"
+                        />
+                        <textarea
+                            id="article-text"
+                            class="article-text"
+                            placeholder="Article Text"
+                            oninput="return Client.showClearBtn(event)"
+                        ></textarea>
+                        <span class="empty-btn"
+                            ><i
+                                class="fas fa-times"
+                                onclick="return Client.clearHandler()"
+                            ></i
+                        ></span>
+                    </div>
+                    <input
+                        type="submit"
+                        class="convert-btn"
+                        value="Convert"
+                        onclick="return Client.handleSubmit(event)"
+                        onsubmit="return Client.handleSubmit(event)"
+                    />
+                </form>
+            </div>
+        </main>
+
+        <section class="results">
+            <div class="container">
+                <div class="resultsBox"></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>CopyRight&copy;2021</p>
+            <div class="social-media">
+                <ul>
+                    <li><i class="fab fa-facebook"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin"></i></li>
+                    <li><i class="fab fa-github"></i></li>
+                </ul>
+            </div>
+        </footer>
+        <script>
+            // Check that service workers are supported
+            if ("serviceWorker" in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("/service-worker.js");
+                });
+            }
+        </script>
+    </body>
+</html>
