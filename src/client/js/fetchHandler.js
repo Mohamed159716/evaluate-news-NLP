@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 async function fetchData(URL, bodyData) {
-    const response = await fetch(`http://localhost:8081/${URL}`, {
+    const response = await fetch(`${window.location.href}${URL}`, {
         method: "POST",
         credentials: "same-origin",
         headers: {
