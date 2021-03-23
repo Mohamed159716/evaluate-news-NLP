@@ -1,6 +1,6 @@
 # Evaluate a News Article with NLP
 
-## Describtion
+## Description
 
 I use an API called MeaningCloud API has put a public facing API in front of their NLP system. I use it in this project to determine various attributes of an article or blog post.
 
